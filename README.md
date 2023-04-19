@@ -32,4 +32,28 @@ A simple overview of the dataset using `ProfileReport` from `ydata_profiling` ca
 | 09/05 | Submit project update 2| Project update 2 due
 | 30/05 | Submit final project | Final project due
 
+#### Goals Project update 1
+
+TODO:
+- **Annotating dataset** Each manually annotate 100 lines of dialogue for sentiment analysis
+    - Make sample [Luuk]
+- **Preprocessing** Finding most effective pre-processing pipeline for sentiment analysis [Luuk]
+- **Visualizations** Basic visualizations and analyis of the data [Shantanu]
+- **Topic modeling** Start exploring topic modeling [Eline]
+
+
+#### Goals Project update 2 (To be specified)
+
+- Sentiment analysis
+    - lexicon-based
+    - ML-based
+- Topic modelling
+    - general
+    - per character
+    - per episode
+    - Wordclouds
+
+
 ### Documentation
+
+- *TBA* 
