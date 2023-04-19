@@ -19,6 +19,17 @@ For this project, we used a dataset that we found on Kaggle.com, containing all 
 
 To process, we will employ various preprocessing techniques discussed throughout the course, such as dealing with punctuation, stopwords, lowercasing, tokenization, lemmatization, etc. The data size is sufficiently big, containing almost 60,000 rows (lines), with 7 columns indicating season, episode, scene, speaker, line, deleted and episode name. The dataset is in a .csv format.
 
+A simple overview of the dataset using `ProfileReport` from `ydata_profiling` can be found in the [data_report.html](data_report.html) file.
+
 ### Milestones
+
+#### Planning
+
+| Date | Milestone goal | Formal deadlines |
+| --- | --- | --- |
+| 19/04 | Finish and submit a project proposal | Project proposal due | 
+25/04 | Submit project update 1 | Project update 1 due
+| 09/05 | Submit project update 2| Project update 2 due
+| 30/05 | Submit final project | Final project due
 
 ### Documentation
