@@ -1,4 +1,4 @@
-id,speaker,line_text,"Sentiment (Negative=-1, Neutral=0, Positive=1)"
+id,speaker,line_text,Sentiment
 59807,Andy,"It's only 6:00. Come on, everybody's going.",
 970,Dwight,"I could tell, from the body language.",
 24088,Andy,[buzzer noise] We were looking for 'kitten.',

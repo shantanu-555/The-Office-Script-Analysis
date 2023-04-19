@@ -1,4 +1,4 @@
-id,speaker,line_text,"Sentiment (Negative=-1, Neutral=0, Positive=1)"
+id,speaker,line_text,Sentiment
 49999,Ryan,"Me neither. Hey, will you put this coat on my chair? I just realized I'm not going to need it down there.",
 9389,Jan,Fabulous time. I drove two and a half hours to get here.,
 7338,Michael,There's a lot of choices. You got to help me here.,
