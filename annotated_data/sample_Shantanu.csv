@@ -1,21 +1,21 @@
 id,speaker,line_text,Sentiment
-49999,Ryan,"Me neither. Hey, will you put this coat on my chair? I just realized I'm not going to need it down there.",
-9389,Jan,Fabulous time. I drove two and a half hours to get here.,
-7338,Michael,There's a lot of choices. You got to help me here.,
-16761,Dwight,"Listen up!  Come to the center of the room, please.  This... [holds up paper that resemles a sheet sized dollar bill with Dwight's face in the middle] is a Schrute Buck.  When you have done something good, you will receive one Schrute Buck.  One thousand Schrute Bucks... equals an extra five minutes for lunch.",
-44174,DeAngelo,"That is true, we do share some similarities. I know how you can fix one of those problems, for me it was portion control. For you, you need a key chain. Maybe one with a-",
-32563,Michael,Doubt it. [disconnects call],
-45846,Jim,Nope. No dog video.,
-26729,Jim,"No, no, no! Don't give him mouth to mouth for this!",
-38938,Erin,"Oh, who else is going?",
-49953,Dwight,"Hot? What are you talking about? This is a nice temperate Florida morning. Eighty-five degrees, seventy-five percent humidity. This is the exact environment you will be facing for the next three weeks of your life. Welcome to special projects orientation. The next three weeks of your life are gonna be the most miserable you've ever faced. They're gonna be hard, they're gonna be dirty. You're gonna wish you were dead.",
-38144,Darryl,Pam.,
-54487,Dwight,Will you run into the bathroom and tell him to eat it?,
-25492,Michael,Are you kidding me?  That's my salad.,
-42870,Erin,"I can't, 'cause there's no clue.",
-16973,Michael,"This is going to be a very good year. Very good. Jan is at home. Jim is back. My protege Ryan is at corporate. Good stuff. Um... Andy and Dwight are rockin' the sales team. I feel very blessed. [slams on breaks, camera turns, Meredith rolls off the hood]",
-40004,Dwight,"Garbage magnet. [throws magnet] Garbage magnet, God! Magnets are interesting enough, you don't need to tart them up with some design. [to Michael] I can't believe this doesn't make you mad!",
-52803,Kevin,"Oh, what a summer! An emotional roller-coaster. I ran over a turtle in the parking lot, but then I saved him by gluing his shell back together. But I'm not that good at puzzles.",
+49999,Ryan,"Me neither. Hey, will you put this coat on my chair? I just realized I'm not going to need it down there.",0.0
+9389,Jan,Fabulous time. I drove two and a half hours to get here.,1.0
+7338,Michael,There's a lot of choices. You got to help me here.,0.0
+16761,Dwight,"Listen up!  Come to the center of the room, please.  This... [holds up paper that resemles a sheet sized dollar bill with Dwight's face in the middle] is a Schrute Buck.  When you have done something good, you will receive one Schrute Buck.  One thousand Schrute Bucks... equals an extra five minutes for lunch.",1.0
+44174,DeAngelo,"That is true, we do share some similarities. I know how you can fix one of those problems, for me it was portion control. For you, you need a key chain. Maybe one with a-",0.0
+32563,Michael,Doubt it. [disconnects call],-1.0
+45846,Jim,Nope. No dog video.,-1.0
+26729,Jim,"No, no, no! Don't give him mouth to mouth for this!",-1.0
+38938,Erin,"Oh, who else is going?",0.0
+49953,Dwight,"Hot? What are you talking about? This is a nice temperate Florida morning. Eighty-five degrees, seventy-five percent humidity. This is the exact environment you will be facing for the next three weeks of your life. Welcome to special projects orientation. The next three weeks of your life are gonna be the most miserable you've ever faced. They're gonna be hard, they're gonna be dirty. You're gonna wish you were dead.",-1.0
+38144,Darryl,Pam.,0.0
+54487,Dwight,Will you run into the bathroom and tell him to eat it?,-1.0
+25492,Michael,Are you kidding me?  That's my salad.,-1.0
+42870,Erin,"I can't, 'cause there's no clue.",-1.0
+16973,Michael,"This is going to be a very good year. Very good. Jan is at home. Jim is back. My protege Ryan is at corporate. Good stuff. Um... Andy and Dwight are rockin' the sales team. I feel very blessed. [slams on breaks, camera turns, Meredith rolls off the hood]",1.0
+40004,Dwight,"Garbage magnet. [throws magnet] Garbage magnet, God! Magnets are interesting enough, you don't need to tart them up with some design. [to Michael] I can't believe this doesn't make you mad!",-1.0
+52803,Kevin,"Oh, what a summer! An emotional roller-coaster. I ran over a turtle in the parking lot, but then I saved him by gluing his shell back together. But I'm not that good at puzzles.",1.0
 17145,Michael,"[sighs] Oh, sh... I'm sorry Angela. Man what a day huh? How could it get any worse? Her computer crashes with the porn, and then Meredith with the accident, and then... Sprinkles! God, that's 3 things. I'll tell you what's going on. This office is cursed, and we need to do something about it.",
 57026,Dwight,It's a divet...,
 57516,Pam,"Hey, hey, guys. Wait. Before we accept these cupcakes, I think we need to have a conversation privately in the conference room. Don't eat the cupcake.",
