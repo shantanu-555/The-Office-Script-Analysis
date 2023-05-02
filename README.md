@@ -48,9 +48,10 @@ A simple overview of the dataset using `ProfileReport` from `ydata_profiling` ca
 TODO:
 - **Annotating dataset** Each manually annotate 100 lines of dialogue for sentiment analysis
     - Make sample [Luuk]
+    - Annotate sample [All]
 - **Preprocessing** Finding most effective pre-processing pipeline for sentiment analysis [Luuk]
 - **Visualizations** Basic visualizations and analyis of the data [Shantanu]
-- **Topic modeling** Start exploring topic modeling [Eline]
+- **Topic modeling** Explore topic modeling and zero-shot classification [Eline]
 
 ## Project update 1
 
