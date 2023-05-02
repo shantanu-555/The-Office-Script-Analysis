@@ -57,7 +57,19 @@ TODO:
 
 In the last few weeks, we have made quite some progress. Here is what we have done so far for each of the goals we set in project update 0:
 
-### Annotating dataset
+### Initial analysis of the data and visualizations
+
+We started off by importing the dataset into a pandas DataFrame and dropping the 'scene' column. We sorted the characters by dialogues spoken and picked the top 20 for our basic analytics. Among those, Michael spoke the most dialogues (as expected) at 12,145 and Creed spoke 456. 
+
+![](Images/dialogues_spoken.png)
+
+Next, we defined a function that takes a character and plots a wordcloud for them by making a collection of the most frequent words spoken that are not stopwords or common english words. We used the wordcloud library (https://pypi.org/project/wordcloud/) for the same. 
+
+Here are the most frequently spoken words by Dwight:
+![](Images/dwight_wordcloud.png)
+Fun Fact? Dwight might be the only character who takes his own name so often.  
+
+### Annotating dataset by sentiment
 
 To test the accuracy of our sentiment analysis, we each manually annotated 100 lines of dialogue for sentiment (either -1, 0 or 1). For this, we made 3 samples of 100 lines each, and each of us annotated one sample. The code that was used to create the samples is in [this notebook](annotated_data/make_samples.ipynb). We saved the samples to CSV and then annotated them using a short function that we wrote in [this notebook](annotated_data/annotate.ipynb). The annotated data was then saved in 3 different CSV files, which can be found in the [annotated_data](annotated_data) folder.
 
