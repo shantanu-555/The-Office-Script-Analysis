@@ -1,11 +1,4 @@
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.express as px
-from collections import Counter
-from nltk.tokenize import word_tokenize
-import nltk.corpus
 import markovify
 import streamlit as st
 
@@ -50,7 +43,7 @@ def dialogue_generator(speaker):
     # Build the model.
     markov_model = markovify.NewlineText(text)
     
-    return(markov_model.make_sentence(max_overlap_ratio=0.4))
+    return(markov_model.make_short_sentence(80))
 
 # Taking user input
 speaker = st.selectbox(label="Select a Character", options=speakers)
@@ -58,4 +51,4 @@ ok = st.button("Generate Dialogue")
 
 # Generating dialogue
 if ok == True:
-    st.write(dialogue_generator(speaker))
+    st.subheader(dialogue_generator(speaker))
