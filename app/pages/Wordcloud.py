@@ -1,13 +1,9 @@
 import streamlit as st
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.express as px
 from collections import Counter
-from wordcloud import WordCloud, STOPWORDS
+from wordcloud import WordCloud
 from nltk.tokenize import RegexpTokenizer
-from nltk.tokenize import word_tokenize
 import nltk.corpus
 
 # Header
