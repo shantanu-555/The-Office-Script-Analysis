@@ -63,6 +63,10 @@ We started off by importing the dataset into a pandas DataFrame and dropping the
 
 ![](Images/dialogues_spoken.png)
 
+We also made a lineplot for the number of dialogues they spoke broken down by season to show the trends in a character's relative relevance across the show.
+
+![](Images/dialogues_by_season.png)
+
 Next, we defined a function that takes a character and plots a wordcloud for them by making a collection of the most frequent words spoken that are not stopwords or common english words. We used the wordcloud library (https://pypi.org/project/wordcloud/) for the same. 
 
 Here are the most frequently spoken words by Dwight:
@@ -96,8 +100,6 @@ The different preprocessing pipelines we used are mostly related to dealing with
 | Distilbert | Keep descriptions | 0.42 | 0.28 | 0.85 |
 
 We find that Roberta Large and Bert uncased perform best, with Roberta Large being more accurate. However, Bert uncased has a lower MSE, meaning that it is more confident in its predictions. For now we used Bert uncased for our sentiment analysis, also because it is faster to train and use. Finally we applied the model to the complete dataset. The full dataset, annotated for sentiment, can be found [here](sentiment_analysis/Sentiment_labeled_data.csv)
-
-### Visualizations
 
 ### Topic modeling
 First, I explored and implemented a variety of preprocessing functions. I tried creating multiple topic models, identified areas of improvement in terms of preprocessing and adapted as needed. These preprocessing techniques include things like lemmatization, removing stopwords/most common words, removing names of characters, removing punctuation, etc. I also implemented things like grouping the text by scene and by episode. Since the average line of dialogue was so short, I have been doing topic modelling by scene, but for the next update it could be interesting to explore by episode as well.
