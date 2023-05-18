@@ -53,11 +53,8 @@ TODO:
 - **Visualizations** Basic visualizations and analyis of the data [Shantanu]
 - **Topic modeling** Explore topic modeling and zero-shot classification [Eline]
 
-## Project update 1
 
-In the last few weeks, we have made quite some progress. Here is what we have done so far for each of the goals we set in project update 0:
-
-### Initial analysis of the data and visualizations
+## Initial analysis of the data and visualizations
 
 We started off by importing the dataset into a pandas DataFrame and dropping the 'scene' column. We sorted the characters by dialogues spoken and picked the top 20 for our basic analytics. Among those, Michael spoke the most dialogues (as expected) at 12,145 and Creed spoke 456. 
 
@@ -73,11 +70,11 @@ Here are the most frequently spoken words by Dwight:
 ![](Images/dwight_wordcloud.png)
 Fun Fact? Dwight might be the only character who takes his own name so often.  
 
-### Annotating dataset by sentiment
+## Annotating dataset by sentiment
 
 To test the accuracy of our sentiment analysis, we each manually annotated 100 lines of dialogue for sentiment (either -1, 0 or 1). For this, we made 3 samples of 100 lines each, and each of us annotated one sample. The code that was used to create the samples is in [this notebook](annotated_data/make_samples.ipynb). We saved the samples to CSV and then annotated them using a short function that we wrote in [this notebook](annotated_data/annotate.ipynb). The annotated data was then saved in 3 different CSV files, which can be found in the [annotated_data](annotated_data) folder.
 
-### Preprocessing/sentiment analysis
+## Preprocessing/sentiment analysis
 
 To find the optimal preprocessing pipeline and model for sentiment analysis, we tried out different methods and compared their accuracy. The code for this can be found in [this notebook](sentiment_analysis/notebook_luuk.ipynb). We then tested all the different combinations on the annotated data, and compared their accuracy. The models we tested are:
 
@@ -101,7 +98,7 @@ The different preprocessing pipelines we used are mostly related to dealing with
 
 We find that Roberta Large and Bert uncased perform best, with Roberta Large being more accurate. However, Bert uncased has a lower MSE, meaning that it is more confident in its predictions. For now we used Bert uncased for our sentiment analysis, also because it is faster to train and use. Finally we applied the model to the complete dataset. The full dataset, annotated for sentiment, can be found [here](sentiment_analysis/Sentiment_labeled_data.csv)
 
-### Topic modeling
+## Topic modeling
 First, I explored and implemented a variety of preprocessing functions. I tried creating multiple topic models, identified areas of improvement in terms of preprocessing and adapted as needed. These preprocessing techniques include things like lemmatization, removing stopwords/most common words, removing names of characters, removing punctuation, etc. I also implemented things like grouping the text by scene and by episode. Since the average line of dialogue was so short, I have been doing topic modelling by scene, but for the next update it could be interesting to explore by episode as well.
 
 For the actual topic modelling, two models were implemented: NMF and LDA. For NMF, I created functions which calculated and plotted the coherence value and reconstruction error for a variety of numbers of topics, so that I could identify the ideal choice. Similarily, for LDA I had a function that did the same, except it did it for coherence, log-likelihood and perplexity. So far, NMF seems to produce more coherent topics, and I have started to see some interesting clusters, for instance:
@@ -125,12 +122,44 @@ point woman prison coming crazy check today better stuff friend pretty question 
 
 Then, I also wanted to try zero-shot topic classification, which is a technique where you can input your own topics/categories into the model, and it classifies the text without labelled data. I think this could be a really interesting way to check whether the labels we give to the LDA/NMF topic models correspond well. (so we could check if the zero-shot label == LDA/NMF cluster label) I tried this out with some categories I came up with (not based on LDA/NMF right now, and plotted some word cloud for different topics)
 
+## A Dialogue Generator based on Markov Chains
 
-### Questions for Jelke:
-- Is an accuracy of 0.63 reasonable for a 3-class sentiment analysis? Or do these models usually perform better?
-- Is MSE an important metric in sentiment analysis? Does it make sense to use Bert uncased instead of Roberta Large?
+## A Web-App that hosts our project for users to interact with the data
 
-### Goals Project update 2 (To be specified)
+We created an interactive web app that hosts our project. It allows the users to interact with the data and the models deployed. Specific pages and nuances of the app are described in this section below. The app is created using a python framework called streamlit (https://streamlit.io/). To host the app yourself, clone the repository to your local system and run the following command:
+	
+	streamlit run .\app\Home.py
+
+Note that for the app to run as expected, you would have to install the following dependencies:
+	
+	pip install streamlit
+	pip install markovify
+	pip install plotly
+	pip install wordcloud
+
+Currently, the app contains a home page, a wordcloud generator, and a random dialogue generator. 
+
+### Home page
+The home page shows a the preliminary analysis of the data mentioned in [Initial analysis of the data and visualizations](#Initial-analysis-of-the-data-and-visualizations). 
+
+![Home page](Images/app_home.png)
+
+### Dialogue Generator page
+This page hosts the dialogue generator described in [A Dialogue Generator based on Markov Chains](#A-Dialogue-Generator-based-on-Markov-Chains)
+
+It allows the user to select a character from the drop-down menu and runs the dialogue generator model. The app caches the data for a particular character when run for the first time so it doesn't have to train the model again when run for the same character. 
+
+![Dialogue Generator Page](Images/app_dialogue_generator_page.png)
+
+### Wordcloud Generator
+
+This page hosts the code for generating a wordcloud of the most spoken words by a character as described in [Initial analysis of the data and visualizations](#Initial-analysis-of-the-data-and-visualizations).
+
+Users can select a character from the drop-down menu and the app caches the model so it can be loaded faster when called again. 
+
+![](Images/app_wordcloud_page.png)
+
+## Goals Project update 2 (To be specified)
 
 - Sentiment analysis
     - lexicon-based
