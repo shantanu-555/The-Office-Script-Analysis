@@ -124,6 +124,8 @@ Then, I also wanted to try zero-shot topic classification, which is a technique 
 
 ## A Dialogue Generator based on Markov Chains
 
+<Insert description here>
+
 ## A Web-App that hosts our project for users to interact with the data
 
 We created an interactive web app that hosts our project. It allows the users to interact with the data and the models deployed. Specific pages and nuances of the app are described in this section below. The app is created using a python framework called streamlit (https://streamlit.io/). To host the app yourself, clone the repository to your local system and run the following command:
@@ -151,13 +153,17 @@ It allows the user to select a character from the drop-down menu and runs the di
 
 ![Dialogue Generator Page](Images/app_dialogue_generator_page.png)
 
-### Wordcloud Generator
+### Word-cloud Generator page
 
-This page hosts the code for generating a wordcloud of the most spoken words by a character as described in [Initial analysis of the data and visualizations](#Initial-analysis-of-the-data-and-visualizations).
+This page hosts the code for generating a word-cloud of the most spoken words by a character as described in [Initial analysis of the data and visualizations](#Initial-analysis-of-the-data-and-visualizations).
 
 Users can select a character from the drop-down menu and the app caches the model so it can be loaded faster when called again. 
 
 ![](Images/app_wordcloud_page.png)
+
+### Sentiment Analyzer page
+
+<Insert description here>
 
 ## Goals Project update 2 (To be specified)
 
