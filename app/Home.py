@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 import pandas as pd
 import plotly.express as px
 from plotly.subplots import make_subplots
@@ -133,6 +134,19 @@ season_dict = {'Michael': {1: 643,
 plot_df = pd.DataFrame.from_dict(season_dict)
 plot_df = plot_df.reindex([i for i in range(1, 10)])
 
+st.header("Average dialogues per episode")
+
+dialogues_per_season = plot_df.sum(axis=1)
+dialogues_per_season = np.asarray(dialogues_per_season)
+
+episodes_per_season = [6, 22, 25, 19, 28, 26, 26, 24, 25]
+
+dialogues_per_episode_per_season = dialogues_per_season//episodes_per_season
+
+fig = px.bar(y=dialogues_per_episode_per_season, x=[i for i in range(1, 10)], 
+             labels={'x':'Season', 'y':'Dialogues per episode'})
+st.write(fig)
+
 st.header("Dialogues spoken by characters broken down by seasons")
 
 st.dataframe(plot_df)
@@ -224,3 +238,14 @@ fig.add_trace(
 fig.update_layout(height=800, width=900, showlegend=False)
 
 st.write(fig)
+
+def speaker_dialogue_pie(season:int):
+    fig = px.pie(values=plot_df.iloc[season-1], names=plot_df.columns, title=f"Dialogues for season {season}", 
+                 hover_name=plot_df.columns)
+    return fig
+
+season = st.slider(label="Select a season", min_value=1, max_value=9)
+
+ok = st.button("Select")
+if ok == True:
+    st.write(speaker_dialogue_pie(season))
