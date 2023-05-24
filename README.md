@@ -1,5 +1,9 @@
 # "That's what she said!" - The Office Script Analysis
-### Luuk Boekestein, Shantanu Motiani and Eline Westerbeek, 
+### Luuk Boekestein, Shantanu Motiani and Eline Westerbeek
+
+Presentation: https://docs.google.com/presentation/d/1D03a4oT4GChSzjRphdv40qTiyKthACdsguRSkGIKqa8/edit#slide=id.p
+
+Doc: https://docs.google.com/document/d/1kqsuMX7s5TVlZ9_fsbOvatStjAoBgypBemcjLTVQcJI/edit
 
 ---
 
