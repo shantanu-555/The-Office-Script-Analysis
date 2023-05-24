@@ -17,8 +17,8 @@ def load_data():
     df.drop(["scene"], axis=1, inplace=True)
     return df
 
+
 speakers = (
-    "All",
     "Michael",
     "Dwight",
     "Jim",
@@ -39,25 +39,74 @@ speakers = (
     "Holly",
     "Nellie",
     "Creed",
+    "All",
 )
 
+seasons = (1, 2, 3, 4, 5, 6, 7, 8, 9, "All",)
 
-def sentiment_character(character):
+
+def sentiment_character(character, season):
+    # load sentiment data
+    
     df = load_data()
-    if not character == "All":
-        df = df.loc[df["speaker"] == character]
-    df = df.groupby(["season", "episode"]).mean()
-    df.reset_index(inplace=True)
+
     df["sentiment"] = df["BERT_uncased_sentiment"].round(2)
-    fig = px.line(
-        df, x="episode", y="sentiment", color="season", title="Sentiment analysis"
-    )
+    df = df.loc[df["speaker"].isin(speakers)]
+    # select all seasons
+    if season == "All":
+        if character == "All":
+            # calculate mean per character per season
+            df = df.groupby(["season", "speaker"], as_index=False).mean()
+            df.reset_index(inplace=True)
+            fig = px.line(
+                df,
+                x="season",
+                y="sentiment",
+                color="speaker",
+                title="Sentiment analysis",
+            )
+        else:
+            df = df.loc[df["speaker"] == character]
+            df = df.groupby(["season", "speaker"], as_index=False).mean()
+            df.reset_index(inplace=True)
+            fig = px.line(
+                df,
+                x="season",
+                y="sentiment",
+                color="speaker",
+                title="Sentiment analysis",
+            )
+    # select only selected season
+    else:
+        df = df.loc[df["season"] == season]
+        if character == "All":
+            df.reset_index(inplace=True)
+            df = df.groupby(["episode", "speaker"], as_index=False).mean()
+            fig = px.line(
+                df,
+                x="episode",
+                y="sentiment",
+                color="speaker",
+                title="Sentiment analysis",
+            )
+        # select only lines from selected character
+        else:
+            df = df.loc[df["speaker"] == character]
+            df = df.groupby(["episode", "speaker"], as_index=False).mean()
+            fig = px.line(
+                df,
+                x="episode",
+                y="sentiment",
+                color="speaker",
+                title="Sentiment analysis (Negative = -1, Neutral = 0, Positive = 1)",
+            )
     st.plotly_chart(fig)
 
 
 character = st.selectbox(label="Select a character", options=speakers)
+season = st.selectbox(label="Select a season", options=seasons)
 
 ok = st.button("View sentiment analysis")
 
 if ok == True:
-    sentiment_character(character)
+    sentiment_character(character, season)
