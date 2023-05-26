@@ -102,11 +102,72 @@ def sentiment_character(character, season):
             )
     st.plotly_chart(fig)
 
+def sentiment_ranking(character, season):
+    df = load_data()
+
+    df["sentiment"] = df["BERT_uncased_sentiment"].round(2)
+    df = df.loc[df["speaker"].isin(speakers)]
+    
+    # make ranking of characters based on sentiment
+    if season == "All":
+        if character == "All":
+            df = df.groupby(["speaker"], as_index=False).mean()
+            df.reset_index(inplace=True)
+            df.sort_values(by="sentiment", ascending=False, inplace=True)
+            fig = px.bar(
+                df,
+                x="speaker",
+                y="sentiment",
+                title="Sentiment ranking",
+            )
+        else:
+            df = df.loc[df["speaker"] == character]
+            df = df.groupby(["season"], as_index=False).mean()
+            df.reset_index(inplace=True)
+            df.sort_values(by="sentiment", ascending=False, inplace=True)
+            fig = px.bar(
+                df,
+                x="season",
+                y="sentiment",
+                title="Sentiment ranking",
+            )
+    else:
+        df = df.loc[df["season"] == season]
+        if character == "All":
+            df.reset_index(inplace=True)
+            df = df.groupby(["speaker"], as_index=False).mean()
+            df.sort_values(by="sentiment", ascending=False, inplace=True)
+            # make sorted table of characters based on sentiment
+            fig = px.bar(
+                df,
+                x="speaker",
+                y="sentiment",
+                title="Sentiment ranking",
+            )
+        else:
+            df = df.loc[df["speaker"] == character]
+            df = df.groupby(["episode"], as_index=False).mean()
+            df.sort_values(by="sentiment", ascending=False, inplace=True)
+            fig = px.bar(
+                df,
+                x="episode",
+                y="sentiment",
+                title="Sentiment ranking",
+            )
+    st.plotly_chart(fig)
+
+
+
+
 
 character = st.selectbox(label="Select a character", options=speakers)
 season = st.selectbox(label="Select a season", options=seasons)
 
 ok = st.button("View sentiment analysis")
+true = st.button("View sentiment ranking")
 
 if ok == True:
     sentiment_character(character, season)
+
+if true == True:
+    sentiment_ranking(character, season)
