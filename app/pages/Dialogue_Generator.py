@@ -43,7 +43,7 @@ def dialogue_generator(speaker):
     # Build the model.
     markov_model = markovify.NewlineText(text)
     
-    return(markov_model.make_short_sentence(80))
+    return(markov_model.make_short_sentence(110))
 
 # Taking user input
 speaker = st.selectbox(label="Select a Character", options=speakers)
