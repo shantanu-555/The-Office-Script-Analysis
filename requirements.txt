@@ -1,0 +1,9 @@
+markovify
+matplotlib
+nltk
+numpy
+pandas==1.5.3
+plotly
+streamlit
+textstat
+wordcloud
