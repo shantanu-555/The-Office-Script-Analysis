@@ -2,7 +2,7 @@ import textstat as txs
 import streamlit as st
 
 def dialogue_stats(character):
-    with open(f'./character_lines/{character}_lines.txt', 'r') as file:
+    with open(f'data/character_lines/{character}_lines.txt', 'r') as file:
         text = file.readlines()
     length = len(text)
     

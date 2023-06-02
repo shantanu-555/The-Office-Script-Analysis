@@ -23,13 +23,7 @@ st.write("7: roles/positions in the company")
 st.write("8: friendships and relationships")
 
 def load_data():
-    # find absolute path to csv file
-    print(os.path.abspath(os.curdir))
-    csv_file_path = (
-        os.path.abspath(os.curdir) + "/topics_by_scene.csv"
-    )
-    print(csv_file_path)
-    df = pd.read_csv(csv_file_path)
+    df = pd.read_csv("src/topic modelling/topics_by_scene.csv")
     return df
 df = load_data()
 
@@ -87,7 +81,7 @@ st.title("Wordclouds per topic")
 
 tokenizer = RegexpTokenizer(r'\w+')
 
-with open('most_common_english_words.txt', 'r') as file:
+with open('src/topic modelling/most_common_english_words.txt', 'r') as file:
     most_common = [i.strip('\n') for i in file.readlines()]
 
 stopwords = set(nltk.corpus.stopwords.words('english'))

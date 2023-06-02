@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 st.title("An exploratory analysis of The Office (US)")
 
 def load_data():
-    df = pd.read_csv("The_Office_lines.csv", index_col='id')
+    df = pd.read_csv("data/dataset/The_Office_lines.csv", index_col='id')
     df.drop(['scene'], axis = 1, inplace=True)
     df.rename({'line_text': 'line'}, axis=1, inplace=True)
     return(df)

@@ -10,7 +10,7 @@ import nltk.corpus
 st.title("Wordcloud of the most spoken words by a character")
 
 def load_data():
-    df = pd.read_csv("The_Office_lines.csv", index_col='id')
+    df = pd.read_csv("data/dataset/The_Office_lines.csv", index_col='id')
     df.drop(['scene'], axis = 1, inplace=True)
     df.rename({'line_text': 'line'}, axis=1, inplace=True)
     return(df)
@@ -19,7 +19,7 @@ df = load_data()
 
 tokenizer = RegexpTokenizer(r'\w+')
 
-with open('most_common_english_words.txt', 'r') as file:
+with open('src/topic modelling/most_common_english_words.txt', 'r') as file:
     most_common = [i.strip('\n') for i in file.readlines()]
 
 stopwords = set(nltk.corpus.stopwords.words('english'))

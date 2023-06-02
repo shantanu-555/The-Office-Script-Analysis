@@ -6,7 +6,7 @@ import streamlit as st
 st.title("Dialogue Generator using Markov Chains")
 
 def load_data():
-    df = pd.read_csv("The_Office_lines.csv", index_col='id')
+    df = pd.read_csv("data/dataset/The_Office_lines.csv", index_col='id')
     df.drop(['scene'], axis = 1, inplace=True)
     df.rename({'line_text': 'line'}, axis=1, inplace=True)
     return(df)
@@ -37,7 +37,7 @@ speakers = ('Michael',
 # Defining the function
 def dialogue_generator(speaker):
     # Get raw text as string.
-    with open(f"./character_lines/{speaker}_lines.txt", "r") as f:
+    with open(f"data/character_lines/{speaker}_lines.txt", "r") as f:
         text = f.read()
 
     # Build the model.

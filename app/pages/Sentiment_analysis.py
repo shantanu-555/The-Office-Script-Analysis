@@ -7,13 +7,7 @@ st.title("Sentiment analysis of The Office (US)")
 
 
 def load_data():
-    # find absolute path to csv file
-    print(os.path.abspath(os.curdir))
-    csv_file_path = (
-        os.path.abspath(os.curdir) + "/sentiment_analysis/Sentiment_labeled_data.csv"
-    )
-    print(csv_file_path)
-    df = pd.read_csv(csv_file_path, index_col="id")
+    df = pd.read_csv("src/sentiment_analysis/Sentiment_labeled_data.csv", index_col="id")
     df.drop(["scene"], axis=1, inplace=True)
     return df
 
